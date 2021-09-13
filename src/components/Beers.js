@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import BeerDetails from './BeerDetails';
+import { Link } from 'react-router-dom'
 
-const Beers = () => {
+function Beers ()  {
   const [beers, setBeers] = useState([]);
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const Beers = () => {
     return (
       <ul>
         {beers.map((beer) => {
-          return <li key={beer._id}>{beer.name}</li>;
+          return <Link key={beer._id} to={`/beer/${beer._id}`}> <li onClick={BeerDetails}>{beer.name}</li>; </Link>
         })}
       </ul>
     );
