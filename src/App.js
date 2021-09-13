@@ -6,6 +6,7 @@ import Beers from './components/Beers.js';
 import RandomBeer from './components/RandomBeer';
 import NewBeer from './components/NewBeer.js';
 import { Switch, Route, Link } from 'react-router-dom';
+import BeerDetails from './components/BeerDetails';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/Beers" component={Beers} />
         <Route exact path="/RandomBeer" component={RandomBeer} />
         <Route exact path="/NewBeer" component={NewBeer} />
+        <Route exact path="/beer/:beerId" component={BeerDetails} />
       </Switch>
     </div>
   );
