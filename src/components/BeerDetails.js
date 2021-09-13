@@ -4,9 +4,10 @@ import axios from 'axios';
 
 function BeerDetails(props) {
     
-  let [beer, setBeer] = useState({});
-
+   let [beer, setBeer] = useState({});
+ 
   useEffect(() => {
+    console.log('use effect')
     axios
       .get(
         `https://ih-beers-api2.herokuapp.com/beers/${props.match.params.beerId}`
@@ -15,7 +16,7 @@ function BeerDetails(props) {
         console.log(resApi);
         setBeer(resApi.data);
       });
-  }, [props]);
+  }, []);
 
 //   console.log(props.match.params.beerId);
   return (
